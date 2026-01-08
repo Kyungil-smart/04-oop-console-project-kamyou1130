@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\RiderProjects\\260107\\260107\\260107.csproj": {}
+    "C:\\Users\\user\\Documents\\GitHub\\04-oop-console-project-kamyou1130\\260107\\260107\\260107.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\RiderProjects\\260107\\260107\\260107.csproj": {
+    "C:\\Users\\user\\Documents\\GitHub\\04-oop-console-project-kamyou1130\\260107\\260107\\260107.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\RiderProjects\\260107\\260107\\260107.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\GitHub\\04-oop-console-project-kamyou1130\\260107\\260107\\260107.csproj",
         "projectName": "260107",
-        "projectPath": "C:\\Users\\user\\RiderProjects\\260107\\260107\\260107.csproj",
+        "projectPath": "C:\\Users\\user\\Documents\\GitHub\\04-oop-console-project-kamyou1130\\260107\\260107\\260107.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\RiderProjects\\260107\\260107\\obj\\",
+        "outputPath": "C:\\Users\\user\\Documents\\GitHub\\04-oop-console-project-kamyou1130\\260107\\260107\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
