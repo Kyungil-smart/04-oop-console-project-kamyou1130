@@ -3,7 +3,8 @@
 public class GameManager
 {
     public static bool IsGameOver { get; set; }
-    public const string GameName = "아무튼 RPG";
+    public static bool OnGame { get; set; }
+    public const string GameName = "순발력 타자 게임";
     private PlayerCharacter _player;
 
     public void Run()
@@ -16,7 +17,7 @@ public class GameManager
             Console.Clear();
             SceneManager.Render();
             // 키입력 받고
-            InputManager.GetUserInput();
+            if(!OnGame) InputManager.GetUserInput();
 
             if (InputManager.GetKey(ConsoleKey.L))
             {
@@ -31,13 +32,16 @@ public class GameManager
     private void Init()
     {
         IsGameOver = false;
+        OnGame = false;
         SceneManager.OnChangeScene += InputManager.ResetKey;
         _player = new PlayerCharacter();
         
         SceneManager.AddScene("Title", new TitleScene());
-        SceneManager.AddScene("Story", new StoryScene());
         SceneManager.AddScene("Town", new TownScene(_player));
         SceneManager.AddScene("Log", new LogScene());
+        SceneManager.AddScene("Explain", new ExplainScene());
+        SceneManager.AddScene("Select", new LevelSelectScene());
+        SceneManager.AddScene("First", new FirstLevelScene(_player));
         
         SceneManager.Change("Title");
         

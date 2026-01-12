@@ -2,16 +2,13 @@
 {
     private MenuList _titleMenu;
 
-    public TitleScene()
-    {
-        Init();
-    }
+    public TitleScene() => Init();
 
     public void Init()
     {
         _titleMenu = new MenuList();
         _titleMenu.Add("게임 시작", GameStart);
-        _titleMenu.Add("크레딧", ViewCredits);
+        _titleMenu.Add("게임 방법", GameExplain);
         _titleMenu.Add("게임 종료", GameQuit);
     }
 
@@ -58,10 +55,11 @@
 
     public void GameStart()
     {
-        SceneManager.Change("Town");
+        SceneManager.Change("Select");
     }
 
-    public void ViewCredits()
+    public void GameExplain()
     {
+        SceneManager.Change("Explain");
     }
 }

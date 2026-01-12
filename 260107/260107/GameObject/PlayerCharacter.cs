@@ -4,8 +4,7 @@ using System.Runtime.InteropServices.Marshalling;
 
 public class PlayerCharacter : GameObject
 {
-    public ObservableProperty<int> Health = new ObservableProperty<int>(5);
-    public ObservableProperty<int> Mana = new ObservableProperty<int>(5);
+    public ObservableProperty<int> Health = new ObservableProperty<int>(3);
     private string _healthGauge;
     private string _manaGauge;
     
@@ -20,9 +19,7 @@ public class PlayerCharacter : GameObject
         Symbol = 'P';
         IsActiveControl = true;
         Health.AddListner(SetHealthGauge);
-        Mana.AddListner(SetManaGauge);
-        _healthGauge = "■■■■■";
-        _manaGauge = "■■■■■";
+        _healthGauge = "■■■";
         _inventory = new Inventory(this);
     }
 
@@ -63,7 +60,6 @@ public class PlayerCharacter : GameObject
         if (InputManager.GetKey(ConsoleKey.T))
         {
             Health.Value--;
-            Mana.Value--;
         }
     }
 
@@ -102,7 +98,6 @@ public class PlayerCharacter : GameObject
     public void Render()
     {
         DrawHealthGauge();
-        DrawManaGauge();
         _inventory.Render();
     }
 
@@ -113,63 +108,30 @@ public class PlayerCharacter : GameObject
 
     public void DrawHealthGauge()
     {
-        Console.SetCursorPosition(Position.X - 2, Position.Y - 2);
+        Console.SetCursorPosition(0, 0);
+        "하트".Print(ConsoleColor.Red);
         _healthGauge.Print(ConsoleColor.Red);
     }
-
-    public void DrawManaGauge()
-    {
-        Console.SetCursorPosition(Position.X - 2, Position.Y - 1);
-        _manaGauge.Print(ConsoleColor.Blue);
-    }
-
+    
     public void SetHealthGauge(int health)
     {
         switch (health)
         {
-            case 5:
-                _healthGauge = "■■■■■";
-                break;
-            case 4:
-                _healthGauge = "■■■■□";
-                break;
             case 3:
-                _healthGauge = "■■■□□";
+                _healthGauge = "■■■";
                 break;
             case 2:
-                _healthGauge = "■■□□□";
+                _healthGauge = "■■□";
                 break;
             case 1:
-                _healthGauge = "■□□□□";
+                _healthGauge = "■□□";
                 break;
         }
     }
-
-    public void SetManaGauge(int mana)
-    {
-        switch (mana)
-        {
-            case 5:
-                _manaGauge = "■■■■■";
-                break;
-            case 4:
-                _manaGauge = "■■■■□";
-                break;
-            case 3:
-                _manaGauge = "■■■□□";
-                break;
-            case 2:
-                _manaGauge = "■■□□□";
-                break;
-            case 1:
-                _manaGauge = "■□□□□";
-                break;
-        }
-    }
+    
 
     public void Heal(int value)
     {
         Health.Value += value;
-        Mana.Value += value;
     }
 }
