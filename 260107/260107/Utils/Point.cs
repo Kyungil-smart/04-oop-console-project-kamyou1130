@@ -14,7 +14,7 @@ public class Point
     {
         if (result)
         {
-            _point += _point + (5 * _comboValue);
+            _point = _point + (10 * _comboValue);
             _comboValue++;
         }
         else
