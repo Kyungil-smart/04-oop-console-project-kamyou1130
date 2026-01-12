@@ -126,6 +126,12 @@ public class PlayerCharacter : GameObject
             case 1:
                 _healthGauge = "■□□";
                 break;
+            case 0:
+                _healthGauge = "□□□";
+                Console.SetCursorPosition(3, 9);
+                "게임 오버ㅠㅠ".Print(ConsoleColor.Red);
+                GameManager.IsGameOver = true;
+                break;
         }
     }
     

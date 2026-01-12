@@ -6,12 +6,9 @@ public class FirstLevelScene : Scene
 {
     public PlayerCharacter _player;
     public Point point;
-    private List<string> _quizList = new List<string>(30);
-    private int _currentIndex;
+    public QuizList quizList;
 
-    public string answer;
     private bool result;
-    private bool start;
     
     /*
     private Timer timeCheck;
@@ -22,18 +19,19 @@ public class FirstLevelScene : Scene
     public FirstLevelScene(PlayerCharacter player)
     {
         _player = player;
+        point = new Point(player);
         Init();
     }
     
     public void Init()
     {
+        quizList = new QuizList();
         // timeCheck = new Timer(Timercallback, null, _timeStart, _timeInterval);
-        _quizList.Add("qqewrq");
-        _quizList.Add("erqeqw");
-        _quizList.Add("wqqwwq");
-        _quizList.Add("eqreqw");
-        _quizList.Add("rqrweq");
-        point = new Point();
+        quizList.AddQuiz("erqeqw");
+        quizList.AddQuiz("qqewrq");
+        quizList.AddQuiz("wqqwwq");
+        quizList.AddQuiz("eqreqw");
+        quizList.AddQuiz("rqrweq");
     }
     
     public void Timercallback(object? state)
@@ -44,14 +42,13 @@ public class FirstLevelScene : Scene
     public override void Enter()
     {
         GameManager.OnGame = true;
-        start = true;
-        _currentIndex = 0;
+        quizList.start = true;
     }
 
     public override void Update()
     {
-        Console.SetCursorPosition(3, 7);
-        result = GuessAnswer();
+
+        result = quizList.GuessAnswer();
         point.PointProcess(result);
     }
 
@@ -59,8 +56,9 @@ public class FirstLevelScene : Scene
     {
         _player.Render();
         point.PointRender();
-        QuizPrint();
-        PrintResult(result);
+        point.ComboRender();
+        quizList.QuizPrint();
+        quizList.PrintResult(result);
     }
 
     public override void Exit()
@@ -68,42 +66,11 @@ public class FirstLevelScene : Scene
         GameManager.OnGame = false;
     }
 
-    public void QuizPrint()
-    {
-        Console.SetCursorPosition(3, 5);
-        Console.WriteLine(_quizList[_currentIndex]);
-    }
 
-    public bool GuessAnswer()
-    {
-        answer = Console.ReadLine();
-        bool answerCheck = false;
-        
-        if (answer == _quizList[_currentIndex])
-        {
-            answerCheck = true;
-        }
-        
-        _currentIndex++;
-        start = false;
-        
-        return answerCheck;
-    }
 
-    public void PrintResult(bool result)
-    {
-        if (start == true) return;
-        
-        Console.SetCursorPosition(3, 4);
-        if (result == true)
-        {
-            "정답!!".Print(ConsoleColor.Blue);
-        }
-        else
-        {
-            "땡!!".Print(ConsoleColor.Red);
-        }
-    }
+   
+
+
 
     
 }
