@@ -71,6 +71,4 @@ public class SecondLevelScene : Scene
         quizList.start = false;
         quizList._currentIndex = 0;
     }
-    
-    
 }
