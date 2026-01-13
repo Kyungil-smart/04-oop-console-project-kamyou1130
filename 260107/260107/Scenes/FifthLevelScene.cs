@@ -50,7 +50,7 @@ public class FifthLevelScene : Scene
 
     public override void Update()
     {
-        result = quizList.GuessAnswer();
+        result = quizList.CheckAnswer();
         point.PointProcess(result);
         quizList.GameResult();
     }

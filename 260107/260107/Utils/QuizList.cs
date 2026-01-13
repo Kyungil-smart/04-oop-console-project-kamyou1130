@@ -27,7 +27,7 @@ public class QuizList
         Console.WriteLine(_quizList[_currentIndex]);
     }
     
-    public bool GuessAnswer()
+    public bool CheckAnswer()
     {
         Console.SetCursorPosition(3, 7);
         answer = Console.ReadLine();
