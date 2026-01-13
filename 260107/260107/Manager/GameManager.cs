@@ -54,7 +54,6 @@ public class GameManager
         _point = new Point(_player);
         
         SceneManager.AddScene("Title", new TitleScene());
-        SceneManager.AddScene("Town", new TownScene(_player));
         SceneManager.AddScene("Log", new LogScene());
         SceneManager.AddScene("Explain", new ExplainScene());
         SceneManager.AddScene("Select", new LevelSelectScene());

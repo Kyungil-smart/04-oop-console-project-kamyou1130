@@ -11,7 +11,7 @@ public class Point
         this.player = player;
         _point = 0;
         _comboValue = 0;
-        MaxCombo = 1;
+        MaxCombo = 0;
     }
      
     public void PointProcess(bool result)
@@ -50,6 +50,7 @@ public class Point
     {
         _point = 0;
         _comboValue = 0;
-        MaxCombo = 1;
+        MaxCombo = 0;
+        player.Health.Value = 3;
     }
 }

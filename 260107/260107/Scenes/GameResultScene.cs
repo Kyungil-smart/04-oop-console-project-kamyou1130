@@ -47,12 +47,22 @@ public class GameResultScene : Scene
 
     public override void Render()
     {
-        Console.SetCursorPosition(2, 2);
-        Console.WriteLine($"최종 점수 : {_point._point}");
+        if (PlayerCharacter.notHealth)
+        {
+            Console.SetCursorPosition(2, 1);
+            "게임 오버ㅠㅠ".Print(ConsoleColor.Red);
+        }
+        else
+        {
+            Console.SetCursorPosition(2, 1);
+            "게임 종료!!!".Print(ConsoleColor.Red);
+        }
         Console.SetCursorPosition(2, 3);
+        Console.WriteLine($"최종 점수 : {_point._point}");
+        Console.SetCursorPosition(2, 4);
         Console.WriteLine($"최대 콤보 : {_point.MaxCombo}");
         
-        _selectList.Render(2, 6);
+        _selectList.Render(2, 7);
     }
     
     public void ReStart()
