@@ -1,5 +1,6 @@
 ﻿
-public class FirstLevelScene : Scene
+
+public class SecondLevelScene : Scene
 {
     public PlayerCharacter _player;
     public Point point;
@@ -8,7 +9,7 @@ public class FirstLevelScene : Scene
     private bool result;
   
 
-    public FirstLevelScene(PlayerCharacter player, Point point)
+    public SecondLevelScene(PlayerCharacter player, Point point)
     {
         _player = player;
         this.point = point;
@@ -18,26 +19,26 @@ public class FirstLevelScene : Scene
     public void Init()
     {
         quizList = new QuizList();
-        quizList.AddQuiz("erqeqw");
-        quizList.AddQuiz("qqewrq");
-        quizList.AddQuiz("wqqwwq");
-        quizList.AddQuiz("eqreqw");
-        quizList.AddQuiz("eqwrwe");
-        quizList.AddQuiz("wweqre");
-        quizList.AddQuiz("rweqwe");
-        quizList.AddQuiz("rrqweq");
-        quizList.AddQuiz("erwweq");
-        quizList.AddQuiz("weeeqr");
-        quizList.AddQuiz("eeeeeq");
-        quizList.AddQuiz("eqwrwe");
-        quizList.AddQuiz("qrrrwe");
-        quizList.AddQuiz("wereqr");
-        quizList.AddQuiz("rrqqwe");
-        quizList.AddQuiz("rqrrrw");
-        quizList.AddQuiz("werrwe");
+        quizList.AddQuiz("dwaseq");
+        quizList.AddQuiz("qesdae");
+        quizList.AddQuiz("awqesd");
+        quizList.AddQuiz("rqseas");
+        quizList.AddQuiz("fasqer");
+        quizList.AddQuiz("erqrsa");
+        quizList.AddQuiz("asdqer");
+        quizList.AddQuiz("eewsad");
+        quizList.AddQuiz("ffsdae");
+        quizList.AddQuiz("aseeqr");
+        quizList.AddQuiz("ressdq");
+        quizList.AddQuiz("faseqe");
+        quizList.AddQuiz("sqsqqe");
+        quizList.AddQuiz("rasewd");
+        quizList.AddQuiz("dqwers");
+        quizList.AddQuiz("qwerwe");
+        quizList.AddQuiz("esewdf");
         quizList.AddQuiz("qrwewe");
-        quizList.AddQuiz("wwewwe");
-        quizList.AddQuiz("eqqweq");
+        quizList.AddQuiz("sssswd");
+        quizList.AddQuiz("dweqad");
 
         result = false;
     }
