@@ -69,5 +69,6 @@ public class GameResultScene : Scene
     {
         SceneManager.Change("Select");
         _point.PointReset();
+        PlayerCharacter.notHealth = true;
     }
 }
