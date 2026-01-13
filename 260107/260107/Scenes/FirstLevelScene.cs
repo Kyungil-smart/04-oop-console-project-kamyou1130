@@ -9,34 +9,40 @@ public class FirstLevelScene : Scene
     public QuizList quizList;
 
     private bool result;
-    
-    /*
-    private Timer timeCheck;
-    private int _timeStart = 5000;
-    private int _timeInterval = 5000;
-    */
+  
 
-    public FirstLevelScene(PlayerCharacter player)
+    public FirstLevelScene(PlayerCharacter player, Point point)
     {
         _player = player;
-        point = new Point(player);
+        this.point = point;
         Init();
     }
     
     public void Init()
     {
         quizList = new QuizList();
-        // timeCheck = new Timer(Timercallback, null, _timeStart, _timeInterval);
         quizList.AddQuiz("erqeqw");
         quizList.AddQuiz("qqewrq");
         quizList.AddQuiz("wqqwwq");
         quizList.AddQuiz("eqreqw");
-        quizList.AddQuiz("rqrweq");
-    }
-    
-    public void Timercallback(object? state)
-    {
-        Console.WriteLine("Timer callback");
+        quizList.AddQuiz("eqwrwe");
+        quizList.AddQuiz("wweqre");
+        quizList.AddQuiz("rweqwe");
+        quizList.AddQuiz("rrqweq");
+        quizList.AddQuiz("erwweq");
+        quizList.AddQuiz("weeeqr");
+        quizList.AddQuiz("eeeeeq");
+        quizList.AddQuiz("eqwrwe");
+        quizList.AddQuiz("qrrrwe");
+        quizList.AddQuiz("wereqr");
+        quizList.AddQuiz("rrqqwe");
+        quizList.AddQuiz("rqrrrw");
+        quizList.AddQuiz("werrwe");
+        quizList.AddQuiz("qrwewe");
+        quizList.AddQuiz("wwewwe");
+        quizList.AddQuiz("eqqweq");
+
+        result = false;
     }
     
     public override void Enter()
@@ -47,9 +53,9 @@ public class FirstLevelScene : Scene
 
     public override void Update()
     {
-
         result = quizList.GuessAnswer();
         point.PointProcess(result);
+        quizList.GameResult();
     }
 
     public override void Render()
@@ -64,13 +70,9 @@ public class FirstLevelScene : Scene
     public override void Exit()
     {
         GameManager.OnGame = false;
+        quizList.start = false;
+        quizList._currentIndex = 0;
     }
-
-
-
-   
-
-
-
+    
     
 }

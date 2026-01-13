@@ -48,7 +48,7 @@
     {
     }
 
-    public void GameQuit()
+    public static void GameQuit()
     {
         GameManager.IsGameOver = true;
     }

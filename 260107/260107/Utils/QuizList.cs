@@ -3,7 +3,8 @@
 public class QuizList
 {
     private List<string> _quizList;
-    private int _currentIndex;
+    public int _currentIndex;
+    public static bool endPoint;
     
     public string answer;
     public bool start;
@@ -12,6 +13,7 @@ public class QuizList
     {
         _quizList = new List<string>(30);
         _currentIndex = 0;
+        endPoint = false;
     }
     
     public void AddQuiz(string quiz)
@@ -55,5 +57,10 @@ public class QuizList
         {
             "땡!!".Print(ConsoleColor.Red);
         }
+    }
+
+    public void GameResult()
+    {
+        if (_quizList.Count <= _currentIndex) SceneManager.Change("Result");
     }
 }

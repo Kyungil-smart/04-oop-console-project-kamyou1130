@@ -4,24 +4,30 @@ public class Point
     public PlayerCharacter player;
     public int _point;
     private int _comboValue;
+    public int MaxCombo;
 
     public Point(PlayerCharacter player)
     {
         this.player = player;
         _point = 0;
-        _comboValue = 1;
+        _comboValue = 0;
+        MaxCombo = 1;
     }
      
     public void PointProcess(bool result)
     {
         if (result)
         {
-            _point = _point + (10 * _comboValue);
+            _point = _point + (10 * (_comboValue + 1));
             _comboValue++;
+            if (MaxCombo < _comboValue)
+            {
+                MaxCombo = _comboValue;
+            }
         }
         else
         {
-            _comboValue = 1;
+            _comboValue = 0;
             player.Health.Value--;
         }
     }
@@ -36,8 +42,14 @@ public class Point
     
     public void ComboRender()
     {
-        Console.SetCursorPosition(0, 2);
-        Console.Write("콤보 : ");
-        Console.WriteLine(_comboValue - 1);
+        Console.SetCursorPosition(3, 3);
+        Console.WriteLine($"{_comboValue} COMBO");
+    }
+    
+    public void PointReset()
+    {
+        _point = 0;
+        _comboValue = 0;
+        MaxCombo = 1;
     }
 }

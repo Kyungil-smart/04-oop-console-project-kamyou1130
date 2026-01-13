@@ -11,7 +11,11 @@
         ConsoleKey.Enter,
         ConsoleKey.I,
         ConsoleKey.L,
-        ConsoleKey.T
+        ConsoleKey.T,
+        ConsoleKey.Q,
+        ConsoleKey.W,
+        ConsoleKey.E,
+        ConsoleKey.R
     };
 
     public static bool GetKey(ConsoleKey input)
