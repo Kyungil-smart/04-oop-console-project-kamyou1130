@@ -1,5 +1,5 @@
 ﻿
-public class FourthLevelScene : Scene
+public class FifthLevelScene : Scene
 {
     public PlayerCharacter _player;
     public Point point;
@@ -8,7 +8,7 @@ public class FourthLevelScene : Scene
     private bool result;
   
 
-    public FourthLevelScene(PlayerCharacter player, Point point)
+    public FifthLevelScene(PlayerCharacter player, Point point)
     {
         _player = player;
         this.point = point;
@@ -18,26 +18,26 @@ public class FourthLevelScene : Scene
     public void Init()
     {
         quizList = new QuizList();
-        quizList.AddQuiz("hfheku");
-        quizList.AddQuiz("xufowe");
-        quizList.AddQuiz("reuass");
-        quizList.AddQuiz("fssqez");
-        quizList.AddQuiz("epusra");
-        quizList.AddQuiz("fwizxo");
-        quizList.AddQuiz("reuqed");
-        quizList.AddQuiz("aeqqoo");
-        quizList.AddQuiz("euraxc");
-        quizList.AddQuiz("cwqvtt");
-        quizList.AddQuiz("zsdwey");
-        quizList.AddQuiz("weqtdq");
-        quizList.AddQuiz("dayeor");
-        quizList.AddQuiz("prqwey");
-        quizList.AddQuiz("pzxyeu");
-        quizList.AddQuiz("iewsdd");
-        quizList.AddQuiz("weyrfs");
-        quizList.AddQuiz("sasdue");
-        quizList.AddQuiz("yayqer");
-        quizList.AddQuiz("uwepad");
+        quizList.AddQuiz("hfjlkw");
+        quizList.AddQuiz("xsauqe");
+        quizList.AddQuiz("rawirq");
+        quizList.AddQuiz("fhgebe");
+        quizList.AddQuiz("epqwje");
+        quizList.AddQuiz("fwpeob");
+        quizList.AddQuiz("benemr");
+        quizList.AddQuiz("aesnbo");
+        quizList.AddQuiz("klneio");
+        quizList.AddQuiz("coenmn");
+        quizList.AddQuiz("zooppm");
+        quizList.AddQuiz("weqldw");
+        quizList.AddQuiz("dsfjak");
+        quizList.AddQuiz("nkqqey");
+        quizList.AddQuiz("bggyeu");
+        quizList.AddQuiz("gnnnnd");
+        quizList.AddQuiz("xkerfs");
+        quizList.AddQuiz("ouunue");
+        quizList.AddQuiz("qeemer");
+        quizList.AddQuiz("finish");
 
         result = false;
     }

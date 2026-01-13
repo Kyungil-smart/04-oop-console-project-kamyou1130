@@ -61,6 +61,7 @@ public class GameManager
         SceneManager.AddScene("Second", new SecondLevelScene(_player, _point));
         SceneManager.AddScene("Third", new ThirdLevelScene(_player, _point));
         SceneManager.AddScene("Fourth", new FourthLevelScene(_player, _point));
+        SceneManager.AddScene("Fifth", new FifthLevelScene(_player, _point));
         SceneManager.AddScene("Result", new GameResultScene(_point));
         
         SceneManager.Change("Title");
