@@ -1,0 +1,6 @@
+Git Repository URL : https://github.com/Kyungil-smart/04-oop-console-project-kamyou1130
+
+## 게임 조작법
+
+레벨 선택창은 방향키로 움직이고 난이도를 선택 후 게임 씬에 들어가면
+콘솔에 나오는 문자열 텍스트를 입력하고 Enter키를 누르면 됩니다!
